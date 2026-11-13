@@ -1,0 +1,149 @@
+{
+  "source": "research-kb",
+  "journals": [
+    {
+      "id": "P5",
+      "title": "Metabolic Optimization and Risk of Metachronous Advanced Colorectal Neoplasia in Patients With MASLD",
+      "authors": "Wei-Yuan Chang, Jui Wang, Hsuan-Ho Lin, Hao-Yu Wu, Hsu-Hua Tseng, Mark Bi-Chun Chuang, Li-Chun Chang, Wen-Feng Hsu, Ming-Shiang Wu, Han-Mo Chiu; for the Comprehensive Approach to Risk Evaluation and Elimination of Subhealth (CARES) Research Group",
+      "journal": "JAMA Network Open",
+      "journal_abbr": "JAMA Netw Open",
+      "year": "2026",
+      "doi": "10.1001/jamanetworkopen.2026.25715",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42518234/",
+      "first_author": false,
+      "selected": false
+    },
+    {
+      "id": "P4",
+      "title": "Computer-Assisted Colonoscopy in High–Adenoma Detection Rate Settings in a High-Risk Population: A Randomized Clinical Trial",
+      "authors": "Wen-Feng Hsu, Chen-Ya Kuo, Hsu-Heng Yen, Yu-Min Lin, Yen-Nien Chen, Cheuk-Kay Sun, Wei-Yuan Chang, Hsuan-Ho Lin, Hao-Yu Wu, Li-Chun Chang, Chi-Yang Chang, Ming-Shiang Wu, Han-Mo Chiu",
+      "journal": "JAMA Network Open",
+      "journal_abbr": "JAMA Netw Open",
+      "year": "2026",
+      "doi": "10.1001/jamanetworkopen.2026.4881",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41984482/",
+      "first_author": false,
+      "selected": false
+    },
+    {
+      "id": "P3",
+      "title": "Impact of Full Implementation of Universal Cold Snare Polypectomy for Diminutive and Small Polyps at Colonoscopy on Carbon Footprint",
+      "authors": "Hao-Yu Wu, Wen-Feng Hsu, Li-Chun Chang, Wei-Yuan Chang, Hsuan-Ho Lin, Chen-Ya Kuo, Ming-Shiang Wu, Han-Mo Chiu",
+      "journal": "Digestive Endoscopy",
+      "journal_abbr": "Dig Endosc",
+      "year": "2026",
+      "doi": "10.1111/den.70125",
+      "pubmed": "",
+      "first_author": true,
+      "selected": true
+    },
+    {
+      "id": "P2",
+      "title": "Temporal hospitalization trends for inflammatory bowel disease in Taiwan",
+      "authors": "Hao-Yu Wu, Meng-Tzu Weng, Chien-Chih Tung, Yuan-Ting Chang, Shu-Chen Wei",
+      "journal": "Intestinal Research",
+      "journal_abbr": "Intest Res",
+      "year": "2026",
+      "doi": "10.5217/ir.2025.00199",
+      "pubmed": "",
+      "first_author": true,
+      "selected": false
+    },
+    {
+      "id": "P1",
+      "title": "Combined intravenous immunoglobulin and baricitinib treatment for severe COVID-19 with rhabdomyolysis: A case report",
+      "authors": "Hao-Yu Wu, Chien-Ting Pan, Chiao-Feng Cheng, Chi-Ying Lin, Sheng-Nan Chang, Yi-Chung Chen, Chih-Yuan Wang, Yen-Fu Chen, Chung-Yu Chen, Matthew Huei-Ming Ma, Juey-Jen Hwang",
+      "journal": "Journal of the Formosan Medical Association",
+      "journal_abbr": "J Formos Med Assoc",
+      "year": "2021",
+      "doi": "10.1016/j.jfma.2021.03.014",
+      "pubmed": "",
+      "first_author": true,
+      "selected": false
+    }
+  ],
+  "abstracts": [
+    {
+      "id": "C3",
+      "title": "Locally-Deployable Lightweight LLMs Significantly Improve Clinician Accuracy and Efficiency in Surveillance Colonoscopy Interval Determination: A Real-World Validation Study",
+      "authors": "Hao-Yu Wu, Han-Mo Chiu, et al.",
+      "venue": "DDW 2026",
+      "year": "2026"
+    },
+    {
+      "id": "C2",
+      "title": "Assessing Risk of Advanced Metachronous Neoplasms After En Bloc Resection for Laterally Spreading Tumors: Implications for Optimized Surveillance Strategies",
+      "authors": "Hao-Yu Wu, Wen-Feng Hsu, Li-Chun Chang, Wei-Yuan Chang, Hsuan-Ho Lin, Chen-Ya Kuo, Ming-Shiang Wu, Han-Mo Chiu",
+      "venue": "DDW 2025 (Gastroenterology 169(1):S-1027-S-1028)",
+      "year": "2025"
+    },
+    {
+      "id": "C0",
+      "title": "Using Large Language Models Analysis of Colonoscopy and Pathology Reports for Improving Surveillance Colonoscopy Interval Recommendations",
+      "authors": "Hao-Yu Wu, Han-Mo Chiu, et al.",
+      "venue": "TDDW 2025",
+      "year": "2025"
+    },
+    {
+      "id": "C1",
+      "title": "Impact of transitioning from forceps plus hot snare polypectomy to universal cold snare polypectomy for diminutive and small polyps in colonoscopy remarkably reduces carbon emissions",
+      "authors": "Hao-Yu Wu, Wen-Feng Hsu, Li-Chun Chang, Wei-Yuan Chang, Hsuan-Ho Lin, Chen-Ya Kuo, Han-Mo Chiu",
+      "venue": "DDW 2024 (GIE 99(6):AB309)",
+      "year": "2024"
+    },
+    {
+      "id": "C-1",
+      "title": "Quantifications of hepatic steatosis with attenuation imaging assess association to traditional factors",
+      "authors": "Hao-Yu Wu, Tzu-Chan Hong, et al.",
+      "venue": "TDDW 2022",
+      "year": "2022"
+    }
+  ],
+  "in_prep": [
+    {
+      "title": "Assessing Risk of Advanced Metachronous Neoplasms After En Bloc Resection for Laterally Spreading Tumors"
+    }
+  ],
+  "grants": [
+    {
+      "id": "G3",
+      "title_en": "LLM-based structured analysis of colonoscopy and pathology reports to optimise surveillance intervals: clinical implementation and long-term impact",
+      "title_zh": "基於大型語言模型的大腸鏡及病理報告結構化分析優化追蹤檢查間隔之應用-臨床導入及長期效益分析",
+      "number": "NTUCCS-116-07",
+      "funder": "National Taiwan University Cancer Center",
+      "years": "2027",
+      "start": "2027/01/01",
+      "role": "Principal Investigator"
+    },
+    {
+      "id": "G4",
+      "title_en": "A retrieval-augmented LLM chatbot for bowel-preparation education and a stool-image recognition system: development and prospective feasibility study",
+      "title_zh": "大腸鏡檢查前清腸準備衛教RAG大型語言模型問答機器人與糞便型態影像辨識系統之開發與前瞻性可行性驗證研究",
+      "number": "NTUCCS-115-51",
+      "funder": "NTU Cancer Center – National Taiwan University of Science and Technology Joint Research Program",
+      "years": "2026–2027",
+      "start": "2026/10/01",
+      "role": "Principal Investigator"
+    },
+    {
+      "id": "G2",
+      "title_en": "LLM-Based Structured Analysis of Colonoscopy and Pathology Reports for Optimization of Surveillance Colonoscopy Intervals",
+      "title_zh": "基於大型語言模型的大腸鏡及病理報告結構化分析—優化追蹤檢查間隔之應用",
+      "number": "NSTC 115-2314-B-002-159-MY3",
+      "funder": "National Science and Technology Council (NSTC), Taiwan",
+      "years": "2026–2029",
+      "start": "2026/08/01",
+      "role": "Principal Investigator"
+    },
+    {
+      "id": "G1",
+      "title_en": "An AI endoscopic image model to predict malignancy risk and submucosal invasion depth of colorectal laterally spreading tumors: a multicentre study",
+      "title_zh": "建立預測大腸側向擴散性腫瘤惡性風險及黏膜下侵犯深度之人工智慧內視鏡影像模型：一項多中心研究",
+      "number": "115-S0044",
+      "funder": "National Taiwan University Cancer Center",
+      "years": "2026",
+      "start": "2026/01/01",
+      "role": "Principal Investigator"
+    }
+  ]
+}

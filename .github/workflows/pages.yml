@@ -1,0 +1,65 @@
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 1 * * 1"   # every Monday 09:00 Taiwan time: refresh citations, look for new PubMed papers
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh citations and check PubMed
+        run: python3 scripts/enrich.py
+      - name: Build and verify
+        run: ./scripts/verify.sh
+      - name: Open an issue for new PubMed papers
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          found = json.load(open("build/new_pubmed.json"))
+          if not found:
+              raise SystemExit(0)
+          title = "New PubMed papers to review"
+          existing = subprocess.run(["gh", "issue", "list", "--state", "open", "--search", title, "--json", "title"],
+                                    capture_output=True, text=True).stdout
+          if title in existing:
+              raise SystemExit(0)
+          body = ["PubMed found papers under \"Wu, Hao-Yu\" + Taiwan that are not on the site.",
+                  "If one is yours, add it to research-kb `data/profile.py`, then run `scripts/sync_from_kb.py`.",
+                  "Otherwise add its PMID to `data/pubmed_review.json` (`not_mine`).", ""]
+          body += [f"- PMID {p['pmid']}: {p['title']} — *{p['journal']}* {p['date']} https://pubmed.ncbi.nlm.nih.gov/{p['pmid']}/"
+                   for p in found]
+          subprocess.run(["gh", "issue", "create", "--title", title, "--body", "\n".join(body)], check=True)
+          PY
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
