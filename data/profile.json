@@ -25,6 +25,10 @@
     {
       "label": "Google Scholar",
       "url": "https://scholar.google.com/citations?user=jyqa29EAAAAJ&hl=en"
+    },
+    {
+      "label": "ResearchGate",
+      "url": "https://www.researchgate.net/profile/Hao-Yu-Wu-7"
     }
   ],
   "keywords": ["Large language models", "AI-assisted colonoscopy", "Colorectal cancer screening", "Laterally spreading tumors", "ESD / EMR", "Sustainable endoscopy"],

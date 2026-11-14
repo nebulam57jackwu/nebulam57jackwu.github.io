@@ -33,6 +33,10 @@ copies only public, dated, past talks; industry-sponsored seminars are never pub
 2026-11-14). The 7 hand-verified talks moved from profile.json into research-kb as reviewed entries;
 profile.json keeps only the Drive-less workshop entry. build.py renders profile talks + research talks.
 
+Added the user's ResearchGate profile (Hao-Yu-Wu-7) to homepage buttons and Person sameAs;
+stored without the ev=hdr_xprf tracking parameter. ResearchGate blocks automated fetches (403), so
+the profile content was not checked; authorship is the user's explicit identification.
+
 ## Verification
 
 Baseline and final scripts/verify.sh PASS. Inspect final diff and browser-check the new button.
