@@ -27,6 +27,12 @@ buttons and Person sameAs. Stored the canonical user/hl URL only; omitted the su
 view_op parameters. The profile itself was not readable through the web tool; authorship is based
 on the user's explicit identification. No claim of checking its publication list or visibility.
 
+Talks now come from research-kb data/talks.json (auto-scanned daily from the Drive talks folder by
+research-kb/scripts/talks_autoupdate.sh, systemd timer research-kb-talks.timer 04:30). sync_from_kb.py
+copies only public, dated, past talks; industry-sponsored seminars are never published (user decision
+2026-11-14). The 7 hand-verified talks moved from profile.json into research-kb as reviewed entries;
+profile.json keeps only the Drive-less workshop entry. build.py renders profile talks + research talks.
+
 ## Verification
 
 Baseline and final scripts/verify.sh PASS. Inspect final diff and browser-check the new button.

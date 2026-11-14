@@ -127,7 +127,7 @@ def render(profile: dict, research: dict, metrics: dict) -> str:
         for a in p["awards"])
     awards_sec = section("awards", "Honours & awards", "獲獎", f'<ul class="timeline">{awards}</ul>')
 
-    talk_items = [(t["date"], t["kind"], bi(t["title"], t.get("title_zh", "")), bi(t["venue"], t.get("venue_zh", "")), t.get("slides"), t.get("video")) for t in p["talks"]]
+    talk_items = [(t["date"], t["kind"], bi(t["title"], t.get("title_zh", "")), bi(t["venue"], t.get("venue_zh", "")), t.get("slides"), t.get("video")) for t in [*p["talks"], *research.get("talks", [])]]
     talk_items.sort(key=lambda t: (t[0] == "Ongoing", t[0]), reverse=True)
     talks = "".join(
         f'<li><span class="when">{e(d)}</span><div><p class="pub-title">{title} <span class="tag">{e(kind)}</span></p>'

@@ -12,6 +12,7 @@ amounts/terms.
 from __future__ import annotations
 
 import argparse
+from datetime import date
 import importlib
 import json
 import re
@@ -37,6 +38,9 @@ FUNDER_EN = {
         "NTU Cancer Center – National Taiwan University of Science and Technology Joint Research Program",
 }
 ROLE_EN = {"主持人": "Principal Investigator"}
+TALK_KIND = {"invited_lecture": "Invited lecture", "conference_oral": "Oral presentation",
+             "conference_poster": "Poster", "grand_round": "Grand Round", "workshop_teaching": "Teaching",
+             "public_education": "Public education", "other": "Talk"}
 
 
 def _clean_venue(text: str) -> str:
@@ -79,8 +83,21 @@ def build(kb: Path) -> dict:
     missing = [g["id"] for g in out_grants if not g["title_en"]]
     if missing:
         raise SystemExit(f"Add an English title to GRANT_TITLE_EN for: {missing}")
+    talks_path = kb / "data" / "talks.json"
+    talks = []
+    if talks_path.exists():
+        for t in json.loads(talks_path.read_text(encoding="utf-8"))["talks"]:
+            if not t.get("public") or t.get("hidden") or not t.get("date") or t["date"] > date.today().isoformat():
+                continue
+            talks.append({  # public fields only; no Drive IDs or file names
+                "date": t["date"], "kind": TALK_KIND.get(t["type"], "Talk"),
+                "title": t["title_en"], "title_zh": t.get("title_zh", ""),
+                "venue": ", ".join(x for x in (t.get("event"), t.get("location")) if x),
+                "venue_zh": t.get("event_zh", ""),
+                "slides": t.get("public_slides", ""), "video": t.get("public_video", ""),
+            })
     return {"source": "research-kb", "journals": journals, "abstracts": abstracts,
-            "in_prep": in_prep, "grants": out_grants}
+            "in_prep": in_prep, "grants": out_grants, "talks": talks}
 
 
 def main() -> int:
