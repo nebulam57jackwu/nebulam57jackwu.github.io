@@ -22,3 +22,10 @@ an issue if PubMed lists a new paper under "Wu, Hao-Yu" + Taiwan.
 
 只放公開學術資訊。不得放手機、生日、住址、證照字號或計畫金額；`scripts/verify.sh` 會擋下常見樣式。
 research-kb 是私有 repo，`sync_from_kb.py` 只複製公開欄位。
+
+## 外觀與演講維護
+
+網站固定白底藍色，不隨系統深色模式變更；樣式網址含內容雜湊以避免舊版快取。
+演講僅列已核對議程或簡報的學術／教學活動，排除廠商演講。
+研討會摘要保留在著作區，不自動列為演講。`title_zh`、`venue_zh` 可提供中文版本。
+不要公開未經審查的原始臨床投影片或私人雲端資料夾連結。

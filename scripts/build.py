@@ -6,6 +6,7 @@ Outputs: build/site/index.html, contact.vcf, assets/*, .nojekyll
 """
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 import re
@@ -126,12 +127,11 @@ def render(profile: dict, research: dict, metrics: dict) -> str:
         for a in p["awards"])
     awards_sec = section("awards", "Honours & awards", "獲獎", f'<ul class="timeline">{awards}</ul>')
 
-    talk_items = [(t["date"], t["kind"], t["title"], t["venue"], t.get("slides"), t.get("video")) for t in p["talks"]]
-    talk_items += [(a["year"], "Abstract", a["title"], venue(a["venue"]), "", "") for a in research["abstracts"]]
+    talk_items = [(t["date"], t["kind"], bi(t["title"], t.get("title_zh", "")), bi(t["venue"], t.get("venue_zh", "")), t.get("slides"), t.get("video")) for t in p["talks"]]
     talk_items.sort(key=lambda t: (t[0] == "Ongoing", t[0]), reverse=True)
     talks = "".join(
-        f'<li><span class="when">{e(d)}</span><div><p class="pub-title">{e(title)} <span class="tag">{e(kind)}</span></p>'
-        f'<p class="muted">{e(where)}'
+        f'<li><span class="when">{e(d)}</span><div><p class="pub-title">{title} <span class="tag">{e(kind)}</span></p>'
+        f'<p class="muted">{where}'
         + (f' · <a href="{e(s)}" target="_blank" rel="noopener">Slides</a>' if s else "")
         + (f' · <a href="{e(v)}" target="_blank" rel="noopener">Video</a>' if v else "")
         + '</p></div></li>' for d, kind, title, where, s, v in talk_items)
@@ -159,6 +159,7 @@ def render(profile: dict, research: dict, metrics: dict) -> str:
         ("research", "Research", "研究"), ("publications", "Publications", "著作"),
         ("grants", "Grants", "計畫"), ("awards", "Awards", "獲獎"), ("talks", "Talks", "演講"),
         ("experience", "Experience", "經歷"), ("contact", "Contact", "聯絡")))
+    css_version = hashlib.sha256((ROOT / "assets" / "style.css").read_bytes()).hexdigest()[:12]
     updated = metrics.get("updated") or date.today().isoformat()
     desc = f'{p["name_en"]} — {p["headline_en"]}, {p["org_en"]}. Research, publications, grants, awards and talks.'
     return f'''<!doctype html>
@@ -174,11 +175,10 @@ def render(profile: dict, research: dict, metrics: dict) -> str:
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:url" content="{e(p["site_url"])}">
 <meta property="og:image" content="{e(p["site_url"])}assets/portrait.jpg">
-<meta name="theme-color" content="#1d5a47">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="only light">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v={css_version}">
 <script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>
 </head>
 <body>

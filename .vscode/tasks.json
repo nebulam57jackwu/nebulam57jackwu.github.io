@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label": "Agent: status", "type": "process", "command": "python3", "args": ["scripts/agent-workflow.py", "status"], "options": {"cwd": "${workspaceFolder}"}, "problemMatcher": []},
+    {"label": "Agent: claim", "type": "process", "command": "python3", "args": ["scripts/agent-workflow.py", "claim", "--owner", "${input:agentOwner}"], "options": {"cwd": "${workspaceFolder}"}, "problemMatcher": []},
+    {"label": "Agent: verify", "type": "process", "command": "python3", "args": ["scripts/agent-workflow.py", "verify"], "options": {"cwd": "${workspaceFolder}"}, "problemMatcher": []},
+    {"label": "Agent: release", "type": "process", "command": "python3", "args": ["scripts/agent-workflow.py", "release", "--owner", "${input:agentOwner}"], "options": {"cwd": "${workspaceFolder}"}, "problemMatcher": []},
+    {"label": "Agent: handoff check", "type": "process", "command": "python3", "args": ["scripts/agent-workflow.py", "check"], "options": {"cwd": "${workspaceFolder}"}, "problemMatcher": []}
+  ],
+  "inputs": [{"id": "agentOwner", "type": "promptString", "description": "Unique session owner; reuse the same value when releasing"}]
+}

@@ -1,0 +1,20 @@
+{
+  "managed_hashes": {
+    "scripts/agent-handoff.sh": "c159ba416ff6d356c6da916da065ec3daba2c04cc623be721ef880b4fb7b5607",
+    "scripts/agent-workflow.py": "57d96fe3d1a8e96d10ddd8b042df020772f671a9dee071bb162ea18f506067a9",
+    ".vscode/tasks.json": "3b1e7fe253079bb3699510d86b66b6cd976020f7607cf806f7760d62dd8dafea"
+  },
+  "upgrade_pending": [
+    "scripts/verify.sh"
+  ],
+  "upgrade_status": "partial",
+  "release": "4.1",
+  "version": 4,
+  "mode": "shared-docs",
+  "handoff": "HANDOVER.md",
+  "writer_policy": "single-writer",
+  "research_policy": "read-only-by-default",
+  "initialized_at": "2026-11-14T12:37:46+08:00",
+  "initializer": "/home/a01949/.local/share/dual-agent-kit/scaffold.py",
+  "updated_at": "2026-11-14T12:37:46+08:00"
+}
