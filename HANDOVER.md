@@ -5,7 +5,7 @@ Writer: RELEASED
 Mode: solo
 From: Codex
 To: next agent
-Checkpoint: publication commit containing this handoff; previous HEAD fa2e0a3
+Checkpoint: 06c45e1cf36da1d24a87bfab141a6aa7793a149f (site publication)
 
 ## 1. Current State
 
@@ -19,8 +19,10 @@ The existing project-specific verification script was intentionally preserved du
 
 ## 2. Next Steps
 
-Publish this change on origin/main, observe the GitHub Pages deployment, and verify the live page.
-After deployment no implementation remains. Future additions require evidence of speaker, date and
+Published to origin/main. GitHub Actions run 43558155900 built and deployed successfully.
+The live page was checked at mobile and desktop widths with dark-mode preference: white background,
+eight talk rows, both profile links and no horizontal overflow. No implementation remains.
+Future additions require evidence of speaker, date and
 venue; Google Scholar remains unverified. Do not add uncertain draft talks or company sessions.
 Scope is the academic website; the private research-kb working tree is untouched.
 
