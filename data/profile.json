@@ -21,6 +21,10 @@
     {
       "label": "NTU Scholars",
       "url": "https://scholars.lib.ntu.edu.tw/entities/person/9b33cd5d-bdc9-4864-9833-278f544c9a10"
+    },
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=jyqa29EAAAAJ&hl=en"
     }
   ],
   "keywords": ["Large language models", "AI-assisted colonoscopy", "Colorectal cancer screening", "Laterally spreading tumors", "ESD / EMR", "Sustainable endoscopy"],
