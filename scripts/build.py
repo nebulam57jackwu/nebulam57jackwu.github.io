@@ -109,7 +109,7 @@ def render(profile: dict, research: dict, metrics: dict) -> str:
     abstracts = "".join(
         f'<li class="pub"><p class="pub-title">{e(a["title"])}</p><p class="pub-authors">{authors(a["authors"])}</p>'
         f'<p class="pub-venue"><em>{e(venue(a["venue"]))}</em></p></li>' for a in research["abstracts"])
-    prep = "".join(f'<li class="pub"><p class="pub-title">{e(i["title"])}</p></li>' for i in research["in_prep"])
+    prep = "".join(f'<li class="pub"><p class="pub-title">{e(i["title"])}</p></li>' for i in research["in_prep"]) if p.get("show_in_preparation", False) else ""
     pubs = section("publications", "Publications", "著作", stats
                    + f'<h3>{bi("Journal articles", "期刊論文")}</h3><ol class="pubs">{"".join(pub_item(j, cites) for j in journals)}</ol>'
                    + f'<h3>{bi("Conference abstracts", "研討會論文摘要")}</h3><ol class="pubs">{abstracts}</ol>'

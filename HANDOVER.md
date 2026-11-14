@@ -9,6 +9,11 @@ Checkpoint: previous HEAD b430986; this commit adds the 2025 NTU scholarship
 
 ## Current State
 
+User requested hiding the in-preparation LST manuscript. The public page now omits drafts
+unless profile.show_in_preparation is explicitly enabled. Private KB records and published
+conference abstracts remain unchanged. Baseline/build verification PASS.
+
+
 Added the user-certified 2025 NTU Hou Yong-Xiong scholarship, with official English/Chinese
 names, academic year 114 and award date 2025-12-10. No student or certificate identifiers.
 Scholarships now sync by ID from research-kb SCHOLARSHIPS through an explicit public allowlist;
