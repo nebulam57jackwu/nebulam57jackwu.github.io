@@ -74,14 +74,56 @@
   ],
   "memberships": ["Gastroenterological Society of Taiwan (GEST)", "Digestive Endoscopy Society of Taiwan (DEST)", "Taiwan Society of Internal Medicine (TSIM)", "Taiwan Society of Inflammatory Bowel Disease (TSIBD)"],
   "awards": [
-    {"year": "2026", "en": "Distinguished Young Investigators Award (YIA)", "venue": "19th International Gastrointestinal Consensus Symposium (IGICS 2026)", "highlight": true},
-    {"year": "2024", "en": "International Young Endoscopist Award (IYEA)", "venue": "IYEA 2024", "highlight": true},
-    {"year": "2024", "en": "Outstanding Poster Presentation", "venue": "ENDO 2024"},
-    {"year": "2023", "en": "The 14th Annual Best of DDW in IBD", "venue": "Digestive Disease Week 2023"},
-    {"year": "2023", "en": "Travel Grant", "venue": "Asian Organization for Crohn's and Colitis (AOCC 2023)"},
-    {"year": "2015", "en": "Best Intern Award", "venue": "Department of Surgery, National Taiwan University Hospital"},
-    {"year": "2015", "en": "Presidential Award (1st in class)", "venue": "College of Medicine, National Taiwan University"},
-    {"year": "2012", "en": "Honorable Mention, Summer Research Program", "venue": "NTU Center of Genomic Medicine"}
+    {
+      "year": "2026",
+      "en": "Distinguished Young Investigators Award (YIA)",
+      "venue": "19th International Gastrointestinal Consensus Symposium (IGICS 2026)",
+      "highlight": true
+    },
+    {
+      "id": "ntu-hou-2025",
+      "year": "2025",
+      "en": "National Taiwan University Hou Yong-Xiong Alumni Scholarship for Graduate Healthcare Professionals",
+      "zh": "國立臺灣大學侯永雄校友進修碩博士醫護人員獎學金",
+      "venue": "National Taiwan University · 2025-12-10",
+      "venue_zh": "國立臺灣大學 · 114學年度 · 2025-12-10"
+    },
+    {
+      "year": "2024",
+      "en": "International Young Endoscopist Award (IYEA)",
+      "venue": "IYEA 2024",
+      "highlight": true
+    },
+    {
+      "year": "2024",
+      "en": "Outstanding Poster Presentation",
+      "venue": "ENDO 2024"
+    },
+    {
+      "year": "2023",
+      "en": "The 14th Annual Best of DDW in IBD",
+      "venue": "Digestive Disease Week 2023"
+    },
+    {
+      "year": "2023",
+      "en": "Travel Grant",
+      "venue": "Asian Organization for Crohn's and Colitis (AOCC 2023)"
+    },
+    {
+      "year": "2015",
+      "en": "Best Intern Award",
+      "venue": "Department of Surgery, National Taiwan University Hospital"
+    },
+    {
+      "year": "2015",
+      "en": "Presidential Award (1st in class)",
+      "venue": "College of Medicine, National Taiwan University"
+    },
+    {
+      "year": "2012",
+      "en": "Honorable Mention, Summer Research Program",
+      "venue": "NTU Center of Genomic Medicine"
+    }
   ],
   "talks": [
     {

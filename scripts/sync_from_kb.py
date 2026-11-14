@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import importlib
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -89,6 +90,29 @@ def main() -> int:
     text = json.dumps(build(args.kb.resolve()), ensure_ascii=False, indent=2) + "\n"
     changed = not OUT.exists() or OUT.read_text(encoding="utf-8") != text
     OUT.write_text(text, encoding="utf-8")
+    # Explicitly allowlisted scholarship metadata; preserve manually curated profile entries.
+    sys.path.insert(0, str(args.kb.resolve()))
+    kb_profile = importlib.import_module("data.profile")
+    path = ROOT / "data" / "profile.json"
+    current_text = path.read_text(encoding="utf-8")
+    public_profile = json.loads(current_text)
+    for award in kb_profile.SCHOLARSHIPS:
+        item = {"id": award["id"], "year": str(award["year"]),
+                "en": award["title_en"], "zh": award["title_zh"],
+                "venue": award["institution_en"] + " · " + award["awarded_on"],
+                "venue_zh": award["institution_zh"] + f" · {award['academic_year_roc']}學年度 · {award['awarded_on']}"}
+        public_profile["awards"] = [a for a in public_profile["awards"] if a.get("id") != award["id"]]
+        public_profile["awards"].append(item)
+    public_profile["awards"].sort(key=lambda a: str(a["year"]), reverse=True)
+    # Keep unrelated hand-edited JSON formatting stable.
+    awards_json = json.dumps(public_profile["awards"], ensure_ascii=False, indent=2).replace("\n", "\n  ")
+    updated_profile, replacements = re.subn(r'("awards": )\[[\s\S]*?\](?=,\n)',
+                          lambda match: match[1] + awards_json, current_text, count=1)
+    if replacements != 1:
+        raise SystemExit("Expected one awards array in data/profile.json")
+    path.write_text(updated_profile, encoding="utf-8")
+    print(f"{'updated' if updated_profile != current_text else 'unchanged'}: data/profile.json")
+
     print(f"{'updated' if changed else 'unchanged'}: {OUT.relative_to(ROOT)}")
     return 0
 

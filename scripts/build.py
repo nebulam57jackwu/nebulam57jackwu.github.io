@@ -123,7 +123,7 @@ def render(profile: dict, research: dict, metrics: dict) -> str:
 
     awards = "".join(
         f'<li class="{"hl" if a.get("highlight") else ""}"><span class="when">{e(a["year"])}</span>'
-        f'<div><p class="pub-title">{e(a["en"])}</p><p class="muted">{e(a["venue"])}</p></div></li>'
+        f'<div><p class="pub-title">{bi(a["en"], a.get("zh", ""))}</p><p class="muted">{bi(a["venue"], a.get("venue_zh", ""))}</p></div></li>'
         for a in p["awards"])
     awards_sec = section("awards", "Honours & awards", "獲獎", f'<ul class="timeline">{awards}</ul>')
 
