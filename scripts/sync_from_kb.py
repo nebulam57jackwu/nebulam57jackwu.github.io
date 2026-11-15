@@ -123,7 +123,7 @@ def main() -> int:
     for award in kb_profile.INSTITUTIONAL_AWARDS:
         item = {"id": award["id"], "year": str(award["year"]),
                 "en": award["title_en"], "zh": award["title_zh"], "highlight": True,
-                "venue": award["team_en"] or award["institution_en"],
+                "venue": ", ".join(x for x in (award["institution_en"], award["team_en"]) if x),
                 "venue_zh": award["team_zh"] or award["institution_zh"]}
         public_profile["awards"] = [a for a in public_profile["awards"] if a.get("id") != award["id"]]
         public_profile["awards"].append(item)
