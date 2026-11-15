@@ -73,7 +73,7 @@ def build(kb: Path) -> dict:
             "id": g["id"],
             "title_en": g["title_en"] or GRANT_TITLE_EN.get(g["id"], ""),
             "title_zh": g["title_zh"],
-            "number": g["number"],
+            "number": g["number"] if g["number"].startswith("NSTC") else "",   # 院內編號不上網
             "funder": FUNDER_EN.get(g["funder"], g["funder"]),
             "years": start if start == end else f"{start}–{end}",
             "start": g["period_ad"].split("–")[0],

@@ -117,7 +117,7 @@ def render(profile: dict, research: dict, metrics: dict) -> str:
 
     grants = "".join(
         f'<li><span class="when">{e(g["years"])}</span><div><p class="pub-title">{bi(g["title_en"], g["title_zh"])}</p>'
-        f'<p class="muted">{e(g["funder"])} · {e(g["number"])} · {e(g["role"])}</p></div></li>'
+        f'<p class="muted">{e(" · ".join(x for x in (g["funder"], g["number"], g["role"]) if x))}</p></div></li>'
         for g in research["grants"])
     grants_sec = section("grants", "Research grants", "研究計畫", f'<ul class="timeline">{grants}</ul>')
 
