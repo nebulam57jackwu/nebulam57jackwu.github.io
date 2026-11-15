@@ -116,15 +116,15 @@ def main() -> int:
     for award in kb_profile.SCHOLARSHIPS:
         item = {"id": award["id"], "year": str(award["year"]),
                 "en": award["title_en"], "zh": award["title_zh"],
-                "venue": award["institution_en"] + " · " + award["awarded_on"],
-                "venue_zh": award["institution_zh"] + f" · {award['academic_year_roc']}學年度 · {award['awarded_on']}"}
+                "venue": award["institution_en"],
+                "venue_zh": award["institution_zh"] + f" · {award['academic_year_roc']}學年度"}
         public_profile["awards"] = [a for a in public_profile["awards"] if a.get("id") != award["id"]]
         public_profile["awards"].append(item)
     for award in kb_profile.INSTITUTIONAL_AWARDS:
         item = {"id": award["id"], "year": str(award["year"]),
                 "en": award["title_en"], "zh": award["title_zh"], "highlight": True,
-                "venue": " · ".join(x for x in (award["team_en"] or award["institution_en"], award["awarded_on"]) if x),
-                "venue_zh": " · ".join(x for x in (award["team_zh"] or award["institution_zh"], award["awarded_on"]) if x)}
+                "venue": award["team_en"] or award["institution_en"],
+                "venue_zh": award["team_zh"] or award["institution_zh"]}
         public_profile["awards"] = [a for a in public_profile["awards"] if a.get("id") != award["id"]]
         public_profile["awards"].append(item)
     public_profile["awards"].sort(key=lambda a: str(a["year"]), reverse=True)
